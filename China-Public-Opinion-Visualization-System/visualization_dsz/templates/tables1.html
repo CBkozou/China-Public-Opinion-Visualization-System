@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>舆情获取站点</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="static/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+<!--    add-->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+<style>.chinese{ font-family:STXihei;}</style>
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- 侧边栏 -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- 图标-->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">DSZ ksh</div>
+            </a>
+
+            <!-- 分割线 -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- 主页 -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span class="chinese">主页</span></a>
+            </li>
+
+            <!-- 分割线 -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading chinese">
+                舆情监视
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+             <li class="nav-item">
+                <a class="nav-link" href="/hots">
+                    <i class="fas fa-fw fa-bullseye"></i>
+                    <span class="chinese">舆情热点</span></a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/events">
+                    <i class="fas fa-fw fa-line-chart"></i>
+                    <span class="chinese">舆情事件</span></a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading chinese">
+                数据统计
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span class="chinese">舆情一览</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item chinese" href="/yqAllData">全部舆情</a>
+                        <a class="collapse-item chinese" href="/yqPosiData">正面舆情</a>
+                        <a class="collapse-item chinese" href="/yqNegaData">负面舆情</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/website">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span class="chinese">舆情获取站点</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                      <section id="topbar" >
+    <div class="clearfix container-fluid">
+      <div class="contact-info">
+        <i class="fa fa-envelope" aria-hidden="true" ></i><a> 978870846@qq.com</a>
+        <i class="fa fa-phone" aria-hidden="true"></i> 18487121369
+      </div>
+    </div>
+  </section>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    </br>
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-3 text-gray-800 chinese">舆情获取站点</h1>
+                    <p class="mb-4 chinese">这是我爬取舆情的站点</p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary chinese">站点一览</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered chinese" id="dataTable" width="100%" cellspacing="0">
+
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>来源</th>
+                                            <th>地址</th>
+                                            <th>爬取舆情数</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>百度</td>
+                                            <td><a target="_blank" href="http://top.baidu.com/buzz?b=1&fr=20811">http://top.baidu.com/buzz?b=1&fr=20811</a></td>
+                                            <td>{{baiduCount}}条</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02</td>
+                                            <td>微博</td>
+                                            <td><a target="_blank" href="https://tophub.today/n/KqndgxeLl9">https://tophub.today/n/KqndgxeLl9</a></td>
+                                            <td>{{weiboCount}}条</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 舆情信息可视化杜绍泽 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="static/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="static/js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>

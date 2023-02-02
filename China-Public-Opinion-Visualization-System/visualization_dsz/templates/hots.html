@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>舆情热点</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+<style>.chinese{ font-family:STXihei;}</style>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- 侧边栏 -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- 图标-->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">DSZ ksh</div>
+            </a>
+
+            <!-- 分割线 -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- 主页 -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span class="chinese">主页</span></a>
+            </li>
+
+            <!-- 分割线 -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading chinese">
+                舆情监视
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+             <li class="nav-item">
+                <a class="nav-link" href="/hots">
+                    <i class="fas fa-fw fa-bullseye"></i>
+                    <span class="chinese">舆情热点</span></a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/events">
+                    <i class="fas fa-fw fa-line-chart"></i>
+                    <span class="chinese">舆情事件</span></a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading chinese">
+                数据统计
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span class="chinese">舆情一览</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item chinese" href="/yqAllData">全部舆情</a>
+                        <a class="collapse-item chinese" href="/yqPosiData">正面舆情</a>
+                        <a class="collapse-item chinese" href="/yqNegaData">负面舆情</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/website">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span class="chinese">舆情获取站点</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+<!-- Topbar -->
+                      <section id="topbar" >
+    <div class="clearfix container-fluid">
+      <div class="contact-info">
+        <i class="fa fa-envelope" aria-hidden="true" ></i><a> 978870846@qq.com</a>
+        <i class="fa fa-phone" aria-hidden="true"></i> 18487121369
+      </div>
+    </div>
+  </section>
+                <!-- End of Topbar -->
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+
+                    <!-- Page Heading -->
+                    </br>
+                    <h1 class="h3 mb-2 text-gray-800 chinese">舆情热点</h1>
+                    <p class="mb-2 chinese">在这里对<b>精选的部分</b>舆情热点进行可视化。若想查找每一个热点所包含的全部舆情信息，请在“舆情一览”→“全部舆情”处的搜索功能中输入热点关键词进行查询</p>
+
+                    <span class="h4 mb-2 text-gray-800 font-weight-bold chinese">已总共提取热点关键词</span>
+                    <span class="h4 mb-2 text-primary font-weight-bold chinese">{{hotCount}}</span>
+                    <span class="h4 mb-2 text-gray-800 font-weight-bold chinese">个，与热点相关舆情</span>
+                    <span class="h4 mb-2 text-primary font-weight-bold chinese">{{topicsCount}}</span>
+                    <span class="h4 mb-2 text-gray-800 font-weight-bold chinese">个</span>
+                    <hr>
+
+                    <!-- 热点1 -->
+                    <div class="row">
+
+                        <div class="col-xl-12 col-lg-12" >
+
+                         <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-1">
+                                    <a href="#collapseCard1" class="d-block card-header py-3" data-toggle="collapse"
+                                    role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary chinese">"新疆"  舆情总数:{{countList[3]}}  积极舆情:{{positiveCountList[3]}}
+                                    消极舆情:{{negativeCountList[3]}}</h6>
+                                </a>
+                                </div>
+                                <div class="collapse show" id="collapseCard1">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <!-- 预警-->
+                                        <div class="col-xl-4 col-lg-5">
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary chinese">预警等级</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                         <body style="height: 100%; margin: 0">
+        <div id="container1" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script type="text/javascript">
+var dom = document.getElementById("container1");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+option = {
+    series: [{
+        type: 'gauge',
+        startAngle: 180,
+        endAngle: 0,
+        min: 0,
+        max: 1,
+        splitNumber: 10,
+        axisLine: {
+            lineStyle: {
+                width: 6,
+                color: [
+                    [0.1, '#7CFFB2'],
+                    [0.33, '#58D9F9'],
+                    [0.5, '#ffe599'],
+                    [0.7, '#f6b26b'],
+                    [1, '#FF6E76']
+                ]
+            }
+        },
+
+        pointer: {
+            icon: 'path://M12.8,0.7l12,40.1H0.7L12.8,0.7z',
+            length: '20%',
+            width: 20,
+            offsetCenter: [0, '-50%'],
+            itemStyle: {
+                color: 'auto'
+            }
+        },
+        axisTick: {
+            length: 12,
+            lineStyle: {
+                color: 'auto',
+                width: 2
+            }
+        },
+        splitLine: {
+            length: 20,
+            lineStyle: {
+                color: 'auto',
+                width: 5
+            }
+        },
+        axisLabel: {
+            color: '#464646',
+            fontSize: 20,
+            distance: -60,
+            formatter: function (value) {
+                if (value === 0.900) {
+                    return '4级';
+                }
+                else if (value === 0.600) {
+                    return '3级';
+                }
+                else if (value === 0.400) {
+                    return '2级';
+                }
+                else if (value === 0.200) {
+                    return '1级';
+                }
+                else if (value === 0.000) {
+                    return '0级';
+                }
+            }
+        },
+        title: {
+            offsetCenter: [0, '30%'],
+            fontSize: 30
+        },
+        detail: {
+            fontSize: 30,
+            offsetCenter: [0, '60%'],
+            valueAnimation: true,
+            formatter: function (value) {
+                return {{warningLevelList[3]}} + '级';
+            },
+            color: 'auto'
+        },
+        data: [{
+            value: {{negativeRateList[3]}},
+            name: '预警等级'
+        }]
+
+    }]
+
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                        <!-- 表1-->
+                                        <div class="col-xl-4 col-lg-5">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary chinese">7日情感对比</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                            <body style="height: 100%; margin: 0">
+        <div id="container2" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+        <script type="text/javascript">
+var dom = document.getElementById("container2");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['正面', '负面'],
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['2021-03-24', '2021-03-25', '2021-03-27 ', '2021-03-28', '2021-03-29', '2021-03-31', '2021-04-01 ']
+        }
+    ],
+    series: [
+
+        {
+            name: '正面',
+            color : '#1cc88a' ,
+            type: 'bar',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [5, 7, 2, 0, 2, 0, 2]
+        },
+        {
+            name: '负面',
+            color : '#e74a3b' ,
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3, -6, -3, -3, -3, -2, -0]
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                                         <!-- 词云图 -->
+                                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary chinese">词云图</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="text-center">
+
+                                    <img class="img-fluid px-3 px-sm-1 mt-4 mb-4" style="width: 25rem;"
+                                            src="{{ url_for('static', filename='img/hot4.jpg')}}" alt="">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- 舆情简报-->
+                                        <div class="col-xl-12 col-lg-5">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary chinese">舆情简报</h6>
+                                </div>
+                                <div class="card-body ">
+                                        <p class="chinese">近日，新疆棉花事件持续发酵，并引起了网友们的愤怒，央视新闻、人民日报也为此发表了评论。</p>
+                                        <ul>
+                                            <li><span class="mb-4 text-primary chinese"><b>2021-03-24</b></span><span class="chinese" style="white-space:pre" ><b>      H&M碰瓷新疆棉花</b></span></li>
+                                            <p class="chinese">首先是瑞典时装品牌H&M发表声明说不再采购新疆棉花，引发了网友的强烈不满。网友们纷纷留言表示抵制H&M并向其喊话“退出中国”。</p>
+                                            <li><span class="mb-4 text-primary chinese"><b>2021-03-25</b></span><span class="chinese" style="white-space:pre" ><b>      多个国产品牌发声支持新疆棉</b></span></li>
+                                            <p class="chinese">H&M发表声明后，黄轩、宋茜等和H&M有代言关系的明星纷纷取消了代言该品牌。随后，淘宝、京东、拼多多等多家电商平台APP已不显示H&M搜索结果。</p>
+                                            <li><span class="mb-4 text-primary chinese"><b>2021-03-25</b></span><span class="chinese" style="white-space:pre" ><b>      曝耐克阿迪也抵制新疆棉花</b></span></li>
+                                            <p class="chinese">BCI（瑞士良好棉花发展协会）曾发布声明说将停止中国新疆维吾尔自治区的所有现场活动。原因是中国新疆维吾尔自治区持续存在的强迫劳动和其他侵犯人权行为的指控。这无疑是在挑拨是非。
+                                                应BCI的要求，不少知名品牌纷纷开始抵制新疆棉花：优衣库、ZARA、阿迪、迪卡侬、新百伦等，使得抵制新疆棉花的事件再一次升华。</p>
+                                            <li><span class="mb-4 text-primary chinese"><b>2021-03-25</b></span><span class="chinese" style="white-space:pre" ><b>      一张支持新疆棉的大长图</b></span></li>
+                                            <p class="chinese">娱乐圈也掀起了大波，随后周冬雨终止与Burberry的合作、王源终止与优衣库的合作、孟美琪终止由于新百伦的合作、许光汉终止于ck彪马的合作。来自新疆的佟丽娅、于朦胧、古力娜扎、米热等明星也纷纷转载支持中国棉花。甚至不少明星已经换上了李宁等国内品牌。在大是大非面前，这些明星们的表现可以说是相当给力的。</p>
+                                            <li><span class="mb-4 text-primary chinese"><b>2021-03-31</b></span><span class="chinese" style="white-space:pre" ><b>      H&M再发声明全文未提新疆</b></span></li>
+                                            <p class="chinese">BCI协会的成员一边抵制新疆产品，一边又想赚中国人的钱，“一边吃中国饭、一边砸中国碗”的行为，这世上又哪有这样的好事呢？</p>
+                                        </ul>
+                                        <p class="chinese">总之一句话，“棉花”在西方国家眼里，不过是制裁你的一个借口，欲加之罪，何患无辞？</p>
+
+                                </div>
+                            </div>
+                        </div>
+                                </div></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 热点1结束 -->
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 舆情信息可视化杜绍泽 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="static/vendor/chart.js/Chart.min.js"></script>
+
+</body>
+
+</html>
